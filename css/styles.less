@@ -15,14 +15,39 @@
 // Design Specific Styles
 
 .units-container{
-    max-width: 1680px;
+    max-width: 1600px;
     margin: 0 auto;
 }
+
+.text-columns{
+
+    &-2{
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+
+    }
+
+    &-3{
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+
+    &-2,
+    &-3{
+        -webkit-column-gap: 50px;
+        -moz-column-gap: 50px;
+        column-gap: 50px;
+    }
+}
+
+
 
 // Hero
 
 .fm-hero{
-    background: url(../images/fm-hero-background-house.jpg) no-repeat bottom center; 
+    background: #1B212C url(../images/fm-hero-background-house.jpg) no-repeat bottom center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -365,7 +390,9 @@
 
         .fm-field{
             height: 36px;
+            padding-left: 28px;
             border-bottom: solid 2px @color-white;
+            position: relative;
             display: block;
 
             @media only screen and (max-width: @fm-media-mobile) {
@@ -440,29 +467,50 @@
                 }
             }
 
+            &:before{
+
+                @fm-field-marker: 21px;
+
+                width: @fm-field-marker;
+                height: @fm-field-marker;
+                margin-top: -(@fm-field-marker/2);
+                padding-top: 1px;
+                font-size: @fm-field-marker - 3px;
+                line-height: 100%;
+                color: @fm-color-orange;
+                text-align: center;
+                -webkit-border-radius: 100%;
+                border-radius: 100%;
+                background-color: rgba(17,18,26,0.9);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                content: "\2605";
+            }
+
             &-error{
-                padding-left: 28px;
-                position: relative;
+                border-color: @fm-color-orange;
 
-                &:before{
-
-                    @fm-error-marker: 21px;
-
-                    width: @fm-error-marker;
-                    height: @fm-error-marker;
-                    margin-top: -(@fm-error-marker/2);
-                    padding-top: 1px;
-                    font-size: @fm-error-marker - 3px;
-                    line-height: 100%;
+                > input[type="text"],
+                > input[type="password"],
+                > select{
                     color: @fm-color-orange;
-                    text-align: center;
-                    -webkit-border-radius: 100%;
-                    border-radius: 100%;
-                    background-color: rgba(17,18,26,0.9);
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    content: "\2605";
+
+                    &::-webkit-input-placeholder {
+                       color: @fm-color-orange;
+                    }
+
+                    &:-moz-placeholder {
+                       color: @fm-color-orange;
+                    }
+
+                    &::-moz-placeholder {
+                       color: @fm-color-orange; 
+                    }
+
+                    &:-ms-input-placeholder {  
+                       color: @fm-color-orange;
+                    }
                 }
             }
         }
@@ -565,12 +613,13 @@
 
     blockquote{
         margin: 40px 0 0;
-        padding: 45px 0 0;
+        padding: 45px 0 35px;
         font-family: Cambria, Georgia, serif;
         font-size: 26px;
         font-style: normal;
         text-align: center;
         border: none;
+        border-bottom: solid 1px #D6D8DA;
         background: url(../images/fm-quote-separator.svg) no-repeat top center;
 
         @media only screen and (max-width: 767px) {
@@ -583,10 +632,70 @@
         font-family: @font-family-base;
         font-size: 14px;
         font-style: normal;
-        display: block;
+        display: none;
 
         > b{
             color: @color-body;
+        }
+    }
+}
+
+// Footer
+
+.fm-footer{
+    color: @color-white;
+    background: #626262 url(../images/fm-footer-background.jpg) no-repeat bottom center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .fm-certificates{
+        padding: 25px 50px;
+    }
+
+    .fm-copyright{
+        padding: 25px 50px;
+
+        > p{
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .fm-links{
+            margin: 0;
+            list-style: none;
+            .clearfix;
+
+            > li{
+                padding-left: 20px;
+                float: left;
+
+                &:first-child{
+                    padding-left: 0;
+                }
+
+                > a{
+                    padding: 7px 15px;
+                    font-size: 13px;
+                    line-height: 100%;
+                    color: @color-white;
+                    font-weight: 600;
+                    text-decoration: none;
+                    -webkit-border-radius: 25px;
+                    border-radius: 25px;
+                    background-color: #282828;
+                    display: block;
+                    cursor: pointer;
+
+                    &:hover,
+                    &:focus,
+                    &:active{
+                        color: @color-body;
+                        background-color: @fm-color-gold;
+                    }
+                }
+            }
         }
     }
 }
