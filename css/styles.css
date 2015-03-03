@@ -3289,6 +3289,10 @@ ul.dropdown li.divider {
   -o-background-size: cover;
   background-size: cover;
 }
+.fm-hero-slide {
+  visibility: hidden;
+  display: none;
+}
 .fm-hero .fm-content {
   width: 70%;
   margin: 0 auto;
@@ -3446,11 +3450,6 @@ ul.dropdown li.divider {
   position: relative;
   display: block;
   cursor: pointer;
-  filter: alpha(opacity=80);
-  -moz-opacity: 0.8;
-  opacity: 0.8;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 @media only screen and (max-width: 767px) {
   .fm-hero .fm-picker > li > a {
@@ -3554,6 +3553,10 @@ ul.dropdown li.divider {
 .fm-hero .fm-picker .fm-no.active .fm-icon,
 .fm-hero .fm-picker .fm-no.selected .fm-icon {
   background-image: url(../images/fm-icon-no-gold.svg);
+}
+.fm-hero .ct-cur .fm-picker > li > a {
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .fm-hero .fm-fieldset {
   max-width: 800px;

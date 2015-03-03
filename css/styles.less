@@ -45,11 +45,17 @@
 // Hero
 
 .fm-hero{
+
     background: #1B212C url(../images/fm-hero-background-house.jpg) no-repeat bottom center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    &-slide{
+        visibility: hidden;
+        display: none;
+    }
 
     .fm-content{
         width: 70%;
@@ -210,8 +216,6 @@
                 position: relative;
                 display: block;
                 cursor: pointer;
-                .opacity(80);
-                .transition(all 0.3s ease);
 
                 @media only screen and (max-width: 767px) {
                     width: 25vw;
@@ -363,6 +367,10 @@
                 }
             }
         }
+    }
+
+    .ct-cur .fm-picker > li > a{
+        .transition(all 0.3s ease);
     }
 
     .fm-fieldset{ // Simple Form
