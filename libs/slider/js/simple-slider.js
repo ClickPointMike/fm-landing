@@ -112,6 +112,28 @@ var __slice = [].slice,
         position: ratio * this.slider.outerWidth(),
         el: this.slider
       });
+      // Zacky: mobile support
+      this.dragger.bind('touchstart', function(e) {
+        _this.dragging = true;
+        _this.dragger.addClass("dragging");
+        _this.domDrag(e.originalEvent.touches[0].pageX, e.originalEvent.touches[0].pageY);
+        return false;     
+      });
+
+      $("body").bind('touchmove', function(e) {
+        if (_this.dragging) {
+          _this.domDrag(e.originalEvent.touches[0].pageX, e.originalEvent.touches[0].pageY);
+          return false;
+        }
+      }).bind('touchend', function(e) {
+        if (_this.dragging) {
+          _this.dragging = false;
+          _this.dragger.removeClass("dragging");
+          return $("body").css({
+            cursor: "auto"
+          });
+        }
+      });
     }
 
     SimpleSlider.prototype.createDivElement = function(classname) {
