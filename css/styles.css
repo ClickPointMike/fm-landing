@@ -3283,7 +3283,7 @@ ul.dropdown li.divider {
   column-gap: 50px;
 }
 .fm-hero {
-  background: #1b212c url(../images/fm-hero-background-house.jpg) no-repeat bottom center;
+  background: #1b212c url(../images/fm-hero-background-house-light.jpg) no-repeat bottom center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -3647,7 +3647,7 @@ ul.dropdown li.divider {
   position: relative;
 }
 .fm-hero .fm-fieldset .fm-field-select > select {
-  padding: 0 15px 7px 0;
+  padding: 0 15px;
 }
 .fm-hero .fm-fieldset .fm-field-select > select option {
   color: #222222;
@@ -3665,11 +3665,11 @@ ul.dropdown li.divider {
   content: "";
 }
 .fm-hero .fm-fieldset .fm-field:before {
-  width: 21px;
-  height: 21px;
-  margin-top: -10.5px;
-  padding-top: 1px;
-  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  padding-top: 2px;
+  font-size: 16px;
   line-height: 100%;
   color: #ee7702;
   text-align: center;
