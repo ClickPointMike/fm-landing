@@ -3828,9 +3828,22 @@ ul.dropdown li.divider {
 }
 .fm-footer .fm-certificates {
   padding: 25px 50px;
+  text-align: right;
+}
+@media only screen and (max-width: 767px) {
+  .fm-footer .fm-certificates {
+    padding: 0 50px 0;
+    text-align: center;
+  }
 }
 .fm-footer .fm-copyright {
   padding: 25px 50px;
+}
+@media only screen and (max-width: 767px) {
+  .fm-footer .fm-copyright {
+    padding: 25px 50px 0;
+    text-align: center;
+  }
 }
 .fm-footer .fm-copyright > p {
   margin-bottom: 16px;
@@ -3848,6 +3861,13 @@ ul.dropdown li.divider {
 .fm-footer .fm-copyright .fm-links > li {
   padding-left: 20px;
   float: left;
+}
+@media only screen and (max-width: 767px) {
+  .fm-footer .fm-copyright .fm-links > li {
+    padding-left: 10px;
+    float: none;
+    display: inline-block;
+  }
 }
 .fm-footer .fm-copyright .fm-links > li:first-child {
   padding-left: 0;

@@ -1,4 +1,4 @@
-@import url("../libs/kube/less/kube.less"); // Import Kube Framework
+@import url("../libs/kube/less/kube.less"); // Import Kube Framework http://imperavi.com/kube/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600); // Import "Open Sans" Font Face
 
 // Update Kube Default Variables
@@ -41,8 +41,6 @@
         column-gap: 50px;
     }
 }
-
-
 
 // Hero
 
@@ -652,10 +650,21 @@
 
     .fm-certificates{
         padding: 25px 50px;
+        text-align: right;
+
+        @media only screen and (max-width: 767px) {
+            padding: 0 50px 0;
+            text-align: center;
+        }
     }
 
     .fm-copyright{
         padding: 25px 50px;
+
+        @media only screen and (max-width: 767px) {
+            padding: 25px 50px 0;
+            text-align: center;
+        }
 
         > p{
             margin-bottom: 16px;
@@ -670,6 +679,12 @@
             > li{
                 padding-left: 20px;
                 float: left;
+
+                @media only screen and (max-width: 767px) {
+                    padding-left: 10px;
+                    float: none;
+                    display: inline-block;
+                }
 
                 &:first-child{
                     padding-left: 0;
